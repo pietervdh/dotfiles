@@ -3,7 +3,6 @@ call pathogen#infect()
 filetype plugin indent on " filetype detection[ON] plugin[ON] indent[ON]
 set t_Co=256              " enable 256-color mode.
 syntax enable             " enable syntax highlighting (previously syntax on).
-colorscheme desert        " set colorscheme
 set number                " show line numbers
 set laststatus=2          " last window always has a statusline
 set nohlsearch            " Don't continue to highlight searched phrases.
@@ -36,3 +35,6 @@ nmap <silent> <leader>ul :t.\|s/./=/g\|:nohls<CR>
 map <leader>/ <plug>NERDCommenterToggle<CR> 
 imap <leader>/ <Esc><plug>NERDCommenterToggle<CR>
 
+" look for tags file in current dir, keep going up till root
+set tags=./tags;/
+map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
