@@ -22,3 +22,17 @@ set scrolloff=10	" keep some offset from the bottom when working at the end of a
 set autowrite		" autosave before building
 autocmd Filetype cpp setlocal makeprg=bjam	" use bjam as make cmd
 autocmd Filetype python setlocal makeprg=python\ %
+
+let NERDTreeIgnore=['^bin$', '\~$']
+
+map <leader>n :NERDTreeToggle<CR>
+" change the path to the currently active buffer's file
+nmap <silent> <leader>cd :lcd %:h<CR>
+
+"underline current line with =
+nmap <silent> <leader>ul :t.\|s/./=/g\|:nohls<CR>
+
+" comment line
+map <leader>/ <plug>NERDCommenterToggle<CR> 
+imap <leader>/ <Esc><plug>NERDCommenterToggle<CR>
+
