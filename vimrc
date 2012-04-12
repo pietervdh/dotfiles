@@ -42,7 +42,7 @@ autocmd Filetype cpp setlocal makeprg=bjam	" use bjam as make cmd
 autocmd Filetype python setlocal makeprg=python\ %
 
 let NERDTreeIgnore=['^bin$', '\~$']
-let NERDTreeeShowBookmarks=1
+let NERDTreeShowBookmarks=1
 
 map <leader>n :NERDTreeToggle<CR>
 " change the path to the currently active buffer's file
@@ -68,3 +68,5 @@ cmap w!! w !sudo tee % >/dev/null
 " CommandT settings
 let g:CommandTMaxFiles=1000
 
+" Omnicompletion
+set ofu=syntaxcomplete#Complete
