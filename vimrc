@@ -1,5 +1,6 @@
 set nocompatible          " get rid of Vi compatibility mode. SET FIRST!
 call pathogen#infect()
+call pathogen#helptags()
 filetype plugin indent on " filetype detection[ON] plugin[ON] indent[ON]
 set t_Co=256              " enable 256-color mode.
 syntax enable             " enable syntax highlighting (previously syntax on).
@@ -18,11 +19,30 @@ set wrap linebreak textwidth=0    " wrap text
 set showcmd		" show commands in the lower right corner as they are typed
 set scrolloff=10	" keep some offset from the bottom when working at the end of a file
 
+
+set history=1000         " remember more commands and search history
+set undolevels=1000      " use many muchos levels of undo
+
+set wildignore=*.swp,*.bak,*.pyc,*.class,*.o,.git,.svn
+
+set title                " change the terminal's title
+set visualbell           " don't beep
+set noerrorbells         " don't beep
+
+set nobackup
+set noswapfile
+
+" long line, jump to next 'soft' line i.s.o. next line
+nnoremap j gj
+nnoremap k gk
+
+
 set autowrite		" autosave before building
 autocmd Filetype cpp setlocal makeprg=bjam	" use bjam as make cmd
 autocmd Filetype python setlocal makeprg=python\ %
 
 let NERDTreeIgnore=['^bin$', '\~$']
+let NERDTreeeShowBookmarks=1
 
 map <leader>n :NERDTreeToggle<CR>
 " change the path to the currently active buffer's file
@@ -38,3 +58,13 @@ imap <leader>/ <Esc><plug>NERDCommenterToggle<CR>
 " look for tags file in current dir, keep going up till root
 set tags=./tags;/
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+
+" Quickly edit/reload the vimrc file
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
+cmap w!! w !sudo tee % >/dev/null
+
+" CommandT settings
+let g:CommandTMaxFiles=1000
+
