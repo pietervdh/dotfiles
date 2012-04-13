@@ -58,6 +58,7 @@ imap <leader>/ <Esc><plug>NERDCommenterToggle<CR>
 " look for tags file in current dir, keep going up till root
 set tags=./tags;/
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+let g:easytags_dynamic_files = 1
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
@@ -70,3 +71,22 @@ let g:CommandTMaxFiles=1000
 
 " Omnicompletion
 set ofu=syntaxcomplete#Complete
+
+" first attempt at my own vim function, switch header/source with tag
+function! SwitchHeaderSource()
+	let oldExt = fnamemodify(expand("%:t"), ":e")
+	let newExt = oldExt
+	if (oldExt == "cpp" || oldExt == "c") 
+		let newExt = "h"
+	elseif (oldExt == "h")
+		let newExt = "cpp"
+	endif
+	let baseName = substitute(expand("%:t"), oldExt, newExt, "")
+	exe 'tag ' .baseName
+endfunction
+
+nmap <silent> <leader>h :call SwitchHeaderSource()<CR>
+
+" ctags -R --c++-kinds=+p --fields=+iaS --extra=+qf .
+"
+" au FileType {c,cpp} au BufWritePost <buffer> silent ! [ -e tags ] && ( awk -F'\t' '$2\!="%:gs/'/'\''/"{print}' tags ; ctags -f- '%:gs/'/'\''/' ) | sort -t$'\t' -k1,1 -o tags.new && mv tags.new tags
