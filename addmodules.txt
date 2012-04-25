@@ -1,0 +1,8 @@
+git submodule add http://github-path/nameofmodule.git vim/bundle/nameofmodule
+git submodule init
+git submodule update
+
+for ack:
+$ curl http://betterthangrep.com/ack-standalone > /usr/local/bin/ack
+$ chmod 755 /usr/local/bin/ack 
+

@@ -64,6 +64,9 @@ let g:easytags_dynamic_files = 1
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
+" Command-shift-b : build with 'Test' option
+nmap <silent> <D-B> :make Test<CR>
+
 cmap w!! w !sudo tee % >/dev/null
 
 " CommandT settings
