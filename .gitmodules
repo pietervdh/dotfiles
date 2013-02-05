@@ -19,3 +19,6 @@
 [submodule "vim/bundle/ack.vim"]
 	path = vim/bundle/ack.vim
 	url = https://github.com/vim-scripts/ack.vim.git
+[submodule "vim/bundle/protodef"]
+	path = vim/bundle/protodef
+	url = https://github.com/derekwyatt/vim-protodef.git

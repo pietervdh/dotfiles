@@ -66,6 +66,10 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 " Command-shift-b : build with 'Test' option
 nmap <silent> <D-B> :make Test<CR>
+" Build 'silently', make will only give output when error occurs
+noremap <leader>m :silent! :make \| :redraw! \| :botright :cw<cr>
+" build single file (so no linking is done) (command-option-b) (insert mode, dan ctrl-v (visualise) en dan typen om te zien wat een toetsencombo is)
+nmap <silent> <D-∫> :!~/.vim/bin/buildCurrentFile.sh %:p $PWD<CR> 
 
 cmap w!! w !sudo tee % >/dev/null
 
@@ -74,6 +78,8 @@ let g:CommandTMaxFiles=1000
 
 " Omnicompletion
 set ofu=syntaxcomplete#Complete
+
+" set list listchars=tab:▸\ ,trail:⋅,nbsp:⋅
 
 " first attempt at my own vim function, switch header/source with tag
 function! SwitchHeaderSource()

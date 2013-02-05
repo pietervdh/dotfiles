@@ -1,6 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='scp://heinz/'
-let g:netrw_dirhist_2='scp://openapp/blimp/pebblemedia/'
-let g:netrw_dirhist_3='scp://openapp/blimp/thinkmedia/'
-let g:netrw_dirhist_4='/Users/pieter/Sites/gas'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Volumes/work/code/jerlicia'
+let g:netrw_dirhist_2='/Users/pieter/Sites/gas'
+let g:netrw_dirhist_3='/Users/pieter/Development/HeyHey Stickers/.git/info'
