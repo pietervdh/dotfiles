@@ -1,0 +1,20 @@
+[user]
+	name = Pieter Van Der Helst
+	email = pieter@heyheyapps.com
+[core]
+	quotepath = false
+	excludesfile = /Users/pieter/.gitignore
+[mergetool]
+	keepBackup = true
+	prompt = false
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[diff]
+	tool = Kaleidoscope
+[difftool]
+	prompt = false
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+[merge]
+	tool = Kaleidoscope
