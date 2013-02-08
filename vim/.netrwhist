@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/Volumes/work/code/jerlicia'
 let g:netrw_dirhist_2='/Users/pieter/Sites/gas'
 let g:netrw_dirhist_3='/Users/pieter/Development/HeyHey Stickers/.git/info'
+let g:netrw_dirhist_4='/Volumes/work/code/adhese_tags/release-20121116-old-ui-compatible/java'
+let g:netrw_dirhist_5='/Volumes/work/code/adhese_tags'

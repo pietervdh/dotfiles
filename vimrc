@@ -1,6 +1,37 @@
 set nocompatible          " get rid of Vi compatibility mode. SET FIRST!
-call pathogen#infect()
-call pathogen#helptags()
+filetype off
+
+" Setting up Vundle - the vim plugin bundler
+let iCanHazVundle=1
+let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+if !filereadable(vundle_readme)
+    echo "Installing Vundle.."
+    echo ""
+    silent !mkdir -p ~/.vim/bundle
+    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+    let iCanHazVundle=0
+endif
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+
+Bundle 'Syntastic' 
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'tpope/vim-fugitive'
+Bundle 'scrooloose/nerdtree'
+Bundle 'kien/ctrlp.vim'
+Bundle 'mileszs/ack.vim'
+Bundle 'xolox/vim-easytags'
+Bundle 'derekwyatt/vim-protodef'
+
+if iCanHazVundle == 0
+    echo "Installing Bundles, please ignore key map error messages"
+    echo ""
+    :BundleInstall
+endif
+" Setting up Vundle - the vim plugin bundler end
+"
+
 filetype plugin indent on " filetype detection[ON] plugin[ON] indent[ON]
 set t_Co=256              " enable 256-color mode.
 syntax enable             " enable syntax highlighting (previously syntax on).
@@ -51,10 +82,6 @@ nmap <silent> <leader>cd :lcd %:h<CR>
 "underline current line with =
 nmap <silent> <leader>ul :t.\|s/./=/g\|:nohls<CR>
 
-" comment line
-map <leader>/ <plug>NERDCommenterToggle<CR> 
-imap <leader>/ <Esc><plug>NERDCommenterToggle<CR>
-
 " look for tags file in current dir, keep going up till root
 set tags=./tags;/
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
@@ -73,9 +100,7 @@ nmap <silent> <D-∫> :!~/.vim/bin/buildCurrentFile.sh %:p $PWD<CR>
 
 cmap w!! w !sudo tee % >/dev/null
 
-" CommandT settings
-let g:CommandTMaxFiles=1000
-
+nmap <silent> <leader>t :CtrlP /Volumes/work/code/adhese_tags/release-20121116-old-ui-compatible/<CR>
 " Omnicompletion
 set ofu=syntaxcomplete#Complete
 
