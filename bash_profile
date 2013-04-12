@@ -1,3 +1,4 @@
+# export PS1="\w <U+1F354>  "
 export PS1="\[\033[01;35m\]\u:\[\033[01;34m\]\w\[\033[00m\]\$ "
 export MYSQL_PS1="mysql (\h) [\d]> "
 export LC_CTYPE=en_US.UTF-8
@@ -35,6 +36,6 @@ export CLASSPATH=/usr/local/lib/junit.jar:$CLASSPATH
 # pieter:~$ killall Dock
 #
 
-export MAGICK_HOME="/usr/local/ImageMagick-6.7.5"
-export DYLD_LIBRARY_PATH="$MAGICK_HOME/lib/"
-export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
+#export MAGICK_HOME="/usr/local/ImageMagick-6.7.5"
+#export DYLD_LIBRARY_PATH="$MAGICK_HOME/lib/"
+#export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
