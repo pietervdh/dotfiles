@@ -24,7 +24,7 @@ export BOOST_BUILD_PATH=/Users/pieter/work/code/boost_1_48_0/
 alias gitdiff='git difftool -t opendiff -y'
 
 alias ls='ls -G'
-export PATH=/Users/pieter/Scripts:/usr/local/bin:/usr/bin:/usr/local/mysql/bin:/Library/Tomcat/Home/bin:/Users/pieter/work/valgrind/inst64/bin:$PATH
+export PATH=/Users/pieter/scripts:/usr/local/bin:/usr/bin:/usr/local/mysql/bin:/Library/Tomcat/Home/bin:/Users/pieter/work/valgrind/inst64/bin:$PATH
 export CLASSPATH=/usr/local/lib/junit.jar:$CLASSPATH
 ##
 # Your previous /Users/pieter/.bash_profile file was backed up as /Users/pieter/.bash_profile.macports-saved_2010-06-25_at_11:00:47

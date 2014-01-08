@@ -23,6 +23,8 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'xolox/vim-easytags'
 Bundle 'derekwyatt/vim-protodef'
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
 
 if iCanHazVundle == 0
     echo "Installing Bundles, please ignore key map error messages"
